@@ -53,3 +53,24 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+
+# Visual Studio cache
+.vs/
+
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+
+# VS profiler
+*.psess
+*.vsp
+*.vspx
+
+# Others
+*.vsidx
+*.log
