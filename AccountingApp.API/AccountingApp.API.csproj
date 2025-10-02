@@ -20,4 +20,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AccountingApp.Repository\AccountingApp.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
