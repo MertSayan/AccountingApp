@@ -1,5 +1,8 @@
+using AccountingApp.API.Modules;
 using AccountingApp.Repository;
 using AccountingApp.Service.Mappings;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -21,6 +24,10 @@ builder.Services.AddDbContext<AppDbContext>(x =>
         options.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name);
     });
 });
+
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+
+builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder => containerBuilder.RegisterModule(new RepoServiceModule()));
 
 var app = builder.Build();
 
