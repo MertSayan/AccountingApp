@@ -5,7 +5,7 @@ using AccountingApp.Core.UnitOfWorks;
 
 namespace AccountingApp.Service.Services
 {
-    public class GroupInRoleService(IGenericRepository<GroupInRole> repository, IUnitOfWorks unitOfWorks) : Service<GroupInRole>(repository, unitOfWorks), IGroupInRoleService
+    public class GroupInRoleService(IGenericRepository<GroupInRole> repository, IUnitOfWorks unitOfWorks) : GenericService<GroupInRole>(repository, unitOfWorks), IGroupInRoleService
     {
     }
 }

@@ -5,7 +5,7 @@ using AccountingApp.Core.UnitOfWorks;
 
 namespace AccountingApp.Service.Services
 {
-    public class UserService(IGenericRepository<User> repository, IUnitOfWorks unitOfWorks) : Service<User>(repository, unitOfWorks), IUserService
+    public class UserService(IGenericRepository<User> repository, IUnitOfWorks unitOfWorks) : GenericService<User>(repository, unitOfWorks), IUserService
     {
     }
 }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AccountingApp.Service.Services
 {
-    public class PaymentService(IGenericRepository<Payment> repository, IUnitOfWorks unitOfWorks) : Service<Payment>(repository, unitOfWorks), IPaymentService
+    public class PaymentService(IGenericRepository<Payment> repository, IUnitOfWorks unitOfWorks) : GenericService<Payment>(repository, unitOfWorks), IPaymentService
     {
     }
 }

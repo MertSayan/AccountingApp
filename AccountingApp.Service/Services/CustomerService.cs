@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AccountingApp.Service.Services
 {
-    public class CustomerService(IGenericRepository<Customer> repository, IUnitOfWorks unitOfWorks, ICustomerRepository customerRepository) : Service<Customer>(repository, unitOfWorks), ICustomerService
+    public class CustomerService(IGenericRepository<Customer> repository, IUnitOfWorks unitOfWorks, ICustomerRepository customerRepository) : GenericService<Customer>(repository, unitOfWorks), ICustomerService
     {
         private readonly ICustomerRepository customerRepository = customerRepository;
     }

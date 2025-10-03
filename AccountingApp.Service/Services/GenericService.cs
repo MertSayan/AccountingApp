@@ -6,12 +6,12 @@ using System.Linq.Expressions;
 
 namespace AccountingApp.Service.Services
 {
-    public class Service<T> : IGenericService<T> where T : BaseEntity
+    public class GenericService<T> : IGenericService<T> where T : BaseEntity
     {
         private readonly IGenericRepository<T> _repository;
         private readonly IUnitOfWorks _unitOfWorks;
 
-        public Service(IGenericRepository<T> repository, IUnitOfWorks unitOfWorks)
+        public GenericService(IGenericRepository<T> repository, IUnitOfWorks unitOfWorks)
         {
             _repository = repository;
             _unitOfWorks = unitOfWorks;

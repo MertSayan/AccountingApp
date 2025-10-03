@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AccountingApp.Service.Services
 {
-    public class RoleService(IGenericRepository<Role> repository, IUnitOfWorks unitOfWorks) : Service<Role>(repository, unitOfWorks), IRoleService
+    public class RoleService(IGenericRepository<Role> repository, IUnitOfWorks unitOfWorks) : GenericService<Role>(repository, unitOfWorks), IRoleService
     {
     }
 }
