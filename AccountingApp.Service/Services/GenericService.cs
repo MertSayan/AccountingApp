@@ -27,9 +27,9 @@ namespace AccountingApp.Service.Services
             await _unitOfWorks.CommitAsync();
         } 
 
-        public Task<bool> AnyAsync(Expression<Func<T, bool>> expression)
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            return await _repository.AnyAsync(expression);
         }
 
         public void ChangeStatus(T entity)
