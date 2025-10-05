@@ -27,7 +27,7 @@ namespace AccountingApp.API.Controllers
             var customers =  _customerService.GetAll();
             var dtos = _mapper.Map<List<CustomerDto>>(customers).OrderBy(x=>x.Name).ToList();
             return CreateActionResult(CustomResponseDto<List<CustomerDto>>.Success(200, dtos));
-        }
+        }   
 
         [ServiceFilter(typeof(NotFoundFilter<Customer>))]
         [HttpGet("{id}")]
