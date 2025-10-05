@@ -65,7 +65,7 @@ namespace AccountingApp.API.Controllers
 
             var customerResponseDto = _mapper.Map<CustomerDto>(customer);
 
-            return CreateActionResult(CustomResponseDto<CustomerDto>.Success(201, customerDto));
+            return CreateActionResult(CustomResponseDto<CustomerDto>.Success(201, customerResponseDto));
         }
 
         [ServiceFilter(typeof(NotFoundFilter<Customer>))]
@@ -83,5 +83,8 @@ namespace AccountingApp.API.Controllers
 
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
+
+        //204: Sunucunun isteği başarıyla işlediği fakat herhangi bir içerik döndürmeyeceğini ifade eder.
+         //"Oluşturuldu" olarak da bilinen sunucu yanıt kodu 201, bir istemcinin isteğine yanıt olarak yeni bir kaynağın başarıyla oluşturulduğunu gösteren bir durum kodudur.
     }
 }
